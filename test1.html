@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+  </head>
+  <body>
+    <form action="login.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone"><br><br>
+        <input type="button" value="Generate QR Code" onclick="generateQRCode()">
+
+    </form>
+    <br>
+    <div id="qr-code"></div>
+    <div id="download"></div>
+    
+    <script>
+      function generateQRCode() {
+        var name = document.getElementById("name").value;
+        var phone = document.getElementById("phone").value;
+        var qr_data = "Name: " + name + "\nPhone: " + phone;
+        var qr = qrcode(0, "M");
+        qr.addData(qr_data);
+        qr.make();
+        var qr_code = qr.createImgTag();
+        document.getElementById("qr-code").innerHTML = qr_code;
+        
+        var canvas = document.getElementById("qr-code").getElementsByTagName("canvas")[0];
+        var img_data = canvas.toDataURL("image/png");
+        var filename = name + "_" + phone + ".png";
+        
+        var download_link = document.createElement("a");
+        download_link.download = filename;
+        download_link.href = img_data;
+        download_link.innerHTML = "Download QR Code";
+        
+        document.getElementById("download").innerHTML = "";
+        document.getElementById("download").appendChild(download_link);
+        
+      }
+    </script>
+  </body>
+</html>

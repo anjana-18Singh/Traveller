@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TICKET LESS ENTRY </title>
+</head>
+<style>
+    .conatiner{
+        background-color: antiquewhite;
+        background-image: url("travel.jpg");
+        background-repeat: no-repeat ;
+        background-size: 1400px 800px;
+        filter: brightness(80%);
+    }
+</style>
+<body>
+    <div class="conatiner">
+    <form action="">
+        <h1>BOOK YOUR TICKETS HERE!</h1>
+        <p>this filed is required filled therefore you need to fill *</p>
+        <h2> Contact Information</h2>
+                <p>Name :* <input type="text"  name="name" required>
+                    <br>
+                    Lname :* <input type="text" name="name" required>
+                    <br>
+                    Total member:* <input type="text" name="number" required>
+                </p>
+                <fieldset>
+                    <legend>gender</legend>
+                    male *<input type="radio" name="gender" id="gender" required>
+                    Female * <input type="radio"  name="gender" id="gender" required>
+                </fieldset>
+                
+                <p>Email : <input type="email" name="eamil" id="email"></p>
+                <p>Date :<input type="date" name="date" id="date"></p>
+                <hr>
+                <h2>Choose your Destination</h2>
+                <p>Places to visit
+                    *<select name="Destination" id="Destination" required>
+                       <option value="">--select the option to visit--</option>
+                       <option value="Delhi">India Gate</option>
+                       <option value="jaipur">Qutub minar</option>
+                       <option value="visa">Sarojini nagar</option>
+                       <option value="other">Red fort</option>
+                       <option value="">Agarsen ki baoli</option>
+                       <option value="Delhi">majnu ka tila</option>
+                       <option value="jaipur">Lodhi Garden</option>
+                       <option value="visa">Humanyun Tomb</option>
+                       <option value="other">Science museum</option>
+                   </select>
+               </p>
+                <h2>Payment Information</h2>
+                <p>Card Type: 
+                    *<select name="card_types" id="card_types" required>
+                        <option value="">--select the card option--</option>
+                        <option value="mastercard">mastercard</option>
+                        <option value="Rupay">Rupay</option>
+                        <option value="visa">visa</option>
+                        <option value="other">other</option>
+                    </select>
+                </p>
+                <p>*Card number <input type="card number" name="card number" id="card number" required></p>
+                <p> *Expiration date: <input type="date" name="expiration date" id="expiration date" required></p>
+                <p>*CVV number <input type="password" name="cvv number" id="cvv number" required></p>
+                <input type="submit" value="">
+                <a href="payment.html" class="conatiner">
+                    PAYNOW
+                </a>
+               
+    </form>
+    </div>
+    
+</body>
+</html>
